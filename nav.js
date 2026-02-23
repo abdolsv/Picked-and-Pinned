@@ -58,6 +58,13 @@
         <a href="gift-guides.html">🎁 Gift Guides</a>
       </div>
       <div class="footer-col">
+        <h5>Top Picks</h5>
+        <a href="led-face-mask.html">💡 LED Face Mask</a>
+        <a href="gua-sha.html">🌸 Gua Sha Set</a>
+        <a href="silk-pillowcase.html">😴 Silk Pillowcase</a>
+        <a href="fridge-bins.html">🧊 Fridge Bins</a>
+      </div>
+      <div class="footer-col">
         <h5>Stores</h5>
         <a href="uk-store.html">🇬🇧 UK Store 💷</a>
         <a href="us-store.html">🇺🇸 US Store 💵</a>
