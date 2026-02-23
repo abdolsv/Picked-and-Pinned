@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PickedAndPinned | Curated Amazon Finds UK & US</title>
+  <meta name="description" content="Handpicked Amazon home, beauty and baby finds that actually work. Updated weekly. Shop UK 💷 and US 💵 stores.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .home-hero {
+      background: var(--purple);
+      padding: clamp(4rem,10vw,8rem) clamp(1rem,4vw,3rem);
+      position: relative; overflow: hidden; text-align: center;
+    }
+    .home-hero::before {
+      content:''; position:absolute; inset:0;
+      background: radial-gradient(ellipse 100% 80% at 50% 130%, rgba(196,127,23,0.22) 0%, transparent 60%);
+    }
+    .home-hero::after {
+      content:''; position:absolute;
+      top:-30%; left:-10%; width:50%; height:160%;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.05) 0%, transparent 60%);
+      transform: rotate(-15deg);
+    }
+    .hero-content { position:relative; z-index:1; max-width:720px; margin:0 auto; }
+    .hero-pill {
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(196,127,23,0.18); border:1px solid rgba(196,127,23,0.35);
+      color:var(--gold2); padding:6px 18px; border-radius:20px;
+      font-size:0.78rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+      margin-bottom:1.75rem;
+    }
+    .hero-pill::before { content:'📌'; }
+    .home-hero h1 {
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(2.8rem,8vw,5.5rem); font-weight:600;
+      color:white; line-height:1.05; letter-spacing:-2px;
+      margin-bottom:1.5rem;
+    }
+    .home-hero h1 em { color:var(--gold); font-style:italic; display:block; }
+    .home-hero .sub {
+      color:rgba(255,255,255,0.65); font-size:clamp(1rem,2vw,1.2rem);
+      margin-bottom:2.5rem; max-width:520px; margin-left:auto; margin-right:auto;
+    }
+    .hero-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .hero-btn {
+      padding:14px 28px; border-radius:30px; font-weight:600;
+      font-size:0.95rem; cursor:pointer; border:none; transition:all 0.2s;
+    }
+    .hero-btn.primary { background:var(--gold); color:white; }
+    .hero-btn.primary:hover { background:var(--gold2); transform:translateY(-2px); box-shadow:0 8px 24px rgba(196,127,23,0.4); }
+    .hero-btn.secondary { background:rgba(255,255,255,0.12); color:white; border:1px solid rgba(255,255,255,0.25); }
+    .hero-btn.secondary:hover { background:rgba(255,255,255,0.2); }
+    .hero-stats {
+      display:flex; justify-content:center; gap:2rem;
+      margin-top:3rem; flex-wrap:wrap;
+    }
+    .hero-stat { text-align:center; }
+    .hero-stat .num {
+      font-family:'Cormorant Garamond',serif;
+      font-size:2rem; font-weight:700; color:var(--gold); display:block;
+    }
+    .hero-stat .lbl { font-size:0.75rem; color:rgba(255,255,255,0.5); }
+    .scroll-label {
+      position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+      color:rgba(255,255,255,0.35); font-size:0.72rem; letter-spacing:0.1em;
+      text-transform:uppercase; display:flex; flex-direction:column;
+      align-items:center; gap:8px;
+    }
+    .scroll-arrow { width:1px; height:40px; background:rgba(255,255,255,0.2); position:relative; }
+    .scroll-arrow::after {
+      content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+      width:1px; height:40px; background:var(--gold);
+      animation:scrollDown 2s ease-in-out infinite;
+    }
+    @keyframes scrollDown {
+      0%,100%{transform:translateX(-50%) scaleY(0);transform-origin:top;}
+      50%{transform:translateX(-50%) scaleY(1);transform-origin:top;}
+    }
+
+    /* homepage featured row */
+    .latest-strip {
+      background:var(--offwhite); padding:1.2rem 0;
+      border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+      overflow:hidden; white-space:nowrap;
+    }
+    .strip-track {
+      display:inline-flex; gap:3rem; animation:marquee 30s linear infinite;
+    }
+    .strip-item {
+      font-size:0.8rem; font-weight:500; color:var(--muted);
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .strip-item strong { color:var(--purple); }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* how it works */
+    .how-grid {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2rem;
+    }
+    .how-card {
+      background:white; border-radius:var(--radius); padding:2rem 1.5rem;
+      border:1px solid var(--border); text-align:center;
+    }
+    .how-icon {
+      width:52px; height:52px; border-radius:14px; margin:0 auto 1rem;
+      display:flex; align-items:center; justify-content:center; font-size:1.5rem;
+    }
+    .how-card h4 {
+      font-family:'Cormorant Garamond',serif; font-size:1.25rem;
+      color:var(--purple); margin-bottom:0.5rem; font-weight:600;
+    }
+    .how-card p { font-size:0.84rem; color:var(--muted); line-height:1.6; }
+
+    @media(max-width:768px){
+      .how-grid{grid-template-columns:1fr;}
+      .niche-grid{grid-template-columns:1fr;}
+      .hero-stats{gap:1.5rem;}
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="home-hero">
+    <div class="hero-content fade-up">
+      <span class="hero-pill">New finds every week</span>
+      <h1>Curated Amazon Picks <em>Worth Every Penny</em></h1>
+      <p class="sub">Home organisation, luxury beauty and baby essentials — handpicked for UK and US shoppers. No guesswork. Just products that work.</p>
+      <div class="hero-btns">
+        <a href="uk-store.html" class="hero-btn primary">🇬🇧 Shop UK Store 💷</a>
+        <a href="us-store.html" class="hero-btn secondary">🇺🇸 Shop US Store 💵</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num">28+</span><span class="lbl">Curated Products</span></div>
+        <div class="hero-stat"><span class="num">3</span><span class="lbl">Niches Covered</span></div>
+        <div class="hero-stat"><span class="num">10%</span><span class="lbl">Beauty Commission</span></div>
+        <div class="hero-stat"><span class="num">UK+US</span><span class="lbl">Both Stores</span></div>
+      </div>
+    </div>
+    <div class="scroll-label">Scroll<div class="scroll-arrow"></div></div>
+  </section>
+
+  <!-- ── MARQUEE ───────────────────────────────────────── -->
+  <div class="latest-strip">
+    <div class="strip-track">
+      <span class="strip-item">🏡 <strong>Stackable Fridge Bins</strong> £16 — Home Org</span>
+      <span class="strip-item">✨ <strong>LED Face Mask</strong> £89 — Luxury Beauty 10% commission</span>
+      <span class="strip-item">👶 <strong>Muslin Swaddle Set</strong> £19 — Baby Essentials</span>
+      <span class="strip-item">🏡 <strong>Bamboo Drawer Dividers</strong> £14 — Home Org</span>
+      <span class="strip-item">✨ <strong>Gua Sha Kit</strong> £28 — Luxury Beauty</span>
+      <span class="strip-item">🎁 <strong>Mother's Day Beauty Gift</strong> Under £50 — Gift Guide</span>
+      <span class="strip-item">🏡 <strong>Pantry Canister Set</strong> £32 — Kitchen</span>
+      <span class="strip-item">✨ <strong>Vitamin C Serum</strong> £45 — Skincare</span>
+      <!-- duplicate for seamless loop -->
+      <span class="strip-item">🏡 <strong>Stackable Fridge Bins</strong> £16 — Home Org</span>
+      <span class="strip-item">✨ <strong>LED Face Mask</strong> £89 — Luxury Beauty 10% commission</span>
+      <span class="strip-item">👶 <strong>Muslin Swaddle Set</strong> £19 — Baby Essentials</span>
+      <span class="strip-item">🏡 <strong>Bamboo Drawer Dividers</strong> £14 — Home Org</span>
+      <span class="strip-item">✨ <strong>Gua Sha Kit</strong> £28 — Luxury Beauty</span>
+      <span class="strip-item">🎁 <strong>Mother's Day Beauty Gift</strong> Under £50 — Gift Guide</span>
+    </div>
+  </div>
+
+  <!-- ── SHOP BY NICHE ──────────────────────────────────── -->
+  <section class="section-padded">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Browse by niche</span>
+        <h2 class="section-title">Shop Our <em>Three Collections</em></h2>
+      </div>
+      <div class="niche-grid">
+        <a href="home-organisation.html" class="niche-card">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Home Organisation">
+          <div class="niche-card-overlay">
+            <span class="tag">3% Commission • £10–£80</span>
+            <h3>Home Organisation</h3>
+            <span>Shop 10 Products →</span>
+          </div>
+        </a>
+        <a href="luxury-beauty.html" class="niche-card">
+          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80" alt="Luxury Beauty">
+          <div class="niche-card-overlay">
+            <span class="tag">10% Commission • £15–£150</span>
+            <h3>Luxury Beauty</h3>
+            <span>Shop 10 Products →</span>
+          </div>
+        </a>
+        <a href="baby-essentials.html" class="niche-card">
+          <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=80" alt="Baby Essentials">
+          <div class="niche-card-overlay">
+            <span class="tag">3% Commission • £10–£120</span>
+            <h3>Baby Essentials</h3>
+            <span>Shop 8 Products →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED PRODUCTS ─────────────────────────────── -->
+  <section class="section-padded" style="background:var(--offwhite); padding-top:4rem; padding-bottom:4rem;">
+    <div class="container">
+      <div class="commission-bar">
+        <span class="icon">💄</span>
+        <div>
+          <h4>Luxury Beauty = Highest Earner — 10% Commission</h4>
+          <p>One £100 beauty sale earns £10. A £150 LED mask earns £15. Include at least 2 beauty pins per week.</p>
+        </div>
+      </div>
+
+      <div class="section-header mt-2">
+        <span class="section-label">Editor's top picks</span>
+        <h2 class="section-title">Most <em>Clicked</em> This Week</h2>
+      </div>
+      <div class="product-grid">
+
+        <div class="product-card fade-up">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=500&q=80" alt="Fridge Bins">
+            <span class="card-badge hot">🔥 Trending</span>
+          </div>
+          <div class="card-body">
+            <div class="card-niche">Home Organisation</div>
+            <h3 class="card-title">Stackable Clear Fridge Bins</h3>
+            <p class="card-desc">Fully adjustable, easy to clean, transforms your fridge in under 10 mins. The #1 most saved home pin.</p>
+            <div class="card-meta">
+              <span class="card-price"><span class="from">from</span> £12</span>
+              <span class="card-commission">3% commission</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.amazon.co.uk/s?k=stackable+fridge+bins" target="_blank" class="btn-shop" onclick="return confirm('You are leaving PickedAndPinned to shop on Amazon UK. This is an affiliate link. #ad')">🛍 UK Shop #ad</a>
+            <button class="btn-pin" title="Pin to Pinterest">📌</button>
+          </div>
+        </div>
+
+        <div class="product-card fade-up">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&q=80" alt="LED Face Mask">
+            <span class="card-badge beauty">✨ Beauty</span>
+          </div>
+          <div class="card-body">
+            <div class="card-niche">Luxury Beauty</div>
+            <h3 class="card-title">LED Light Therapy Face Mask</h3>
+            <p class="card-desc">Clinically backed red and blue light therapy for anti-ageing and acne. The highest commission product on Amazon.</p>
+            <div class="card-meta">
+              <span class="card-price"><span class="from">from</span> £40</span>
+              <span class="card-commission">10% commission</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.amazon.co.uk/s?k=LED+face+mask+light+therapy&i=beauty" target="_blank" class="btn-shop gold" onclick="return confirm('Affiliate link — you are going to Amazon UK. #ad')">🛍 UK Shop #ad</a>
+            <button class="btn-pin" title="Pin to Pinterest">📌</button>
+          </div>
+        </div>
+
+        <div class="product-card fade-up">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500&q=80" alt="Baby Swaddles">
+            <span class="card-badge baby">👶 Baby</span>
+          </div>
+          <div class="card-body">
+            <div class="card-niche">Baby Essentials</div>
+            <h3 class="card-title">Muslin Baby Swaddle Set</h3>
+            <p class="card-desc">Super soft 100% cotton muslin swaddles. Every new parent's most used item. Pack of 4.</p>
+            <div class="card-meta">
+              <span class="card-price"><span class="from">from</span> £15</span>
+              <span class="card-commission">3% commission</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.amazon.co.uk/s?k=muslin+baby+swaddles" target="_blank" class="btn-shop" onclick="return confirm('Affiliate link — Amazon UK. #ad')">🛍 UK Shop #ad</a>
+            <button class="btn-pin" title="Pin to Pinterest">📌</button>
+          </div>
+        </div>
+
+        <div class="product-card fade-up">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&q=80" alt="Gua Sha">
+            <span class="card-badge beauty">✨ Beauty</span>
+          </div>
+          <div class="card-body">
+            <div class="card-niche">Luxury Beauty</div>
+            <h3 class="card-title">Facial Gua Sha & Roller Set</h3>
+            <p class="card-desc">Natural rose quartz for lymphatic drainage, reduced puffiness, and a natural glow. 10% commission on every sale.</p>
+            <div class="card-meta">
+              <span class="card-price"><span class="from">from</span> £15</span>
+              <span class="card-commission">10% commission</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.amazon.co.uk/s?k=gua+sha+set+rose+quartz&i=beauty" target="_blank" class="btn-shop gold" onclick="return confirm('Affiliate link — Amazon UK. #ad')">🛍 UK Shop #ad</a>
+            <button class="btn-pin" title="Pin to Pinterest">📌</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ───────────────────────────────────── -->
+  <section class="section-padded">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">How it works</span>
+        <h2 class="section-title">Shop with <em>Confidence</em></h2>
+      </div>
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-icon" style="background:rgba(44,26,94,0.08);">🔍</div>
+          <h4>We Research</h4>
+          <p>Every product is researched using Amazon UK and US review data, Pinterest trend analytics, and real buying intent signals.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-icon" style="background:rgba(196,127,23,0.1);">✅</div>
+          <h4>We Curate</h4>
+          <p>Only products with 4+ stars and 300+ reviews make it to the site. No padding. No random picks. Everything earns its place.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-icon" style="background:rgba(44,26,94,0.08);">🛍</div>
+          <h4>You Shop</h4>
+          <p>Click any product link to go directly to Amazon UK or US. Fast delivery, trusted platform, easy returns. We earn a small commission at no cost to you.</p>
+        </div>
+      </div>
+      <div class="disclosure mt-2">
+        <strong>#ad | Affiliate Disclosure:</strong> PickedAndPinned is a participant in the Amazon Associates Programme. As an Amazon Associate we earn from qualifying purchases. This means we receive a small commission when you click our links and make a purchase — at absolutely no extra cost to you. All product recommendations are genuine and independently chosen.
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="nav.js"></script>
+</body>
+</html>

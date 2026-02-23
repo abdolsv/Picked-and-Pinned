@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>US Store 💵 | PickedAndPinned</title>
+  <meta name="description" content="All Amazon US affiliate finds in one place. Home organisation, luxury beauty and baby essentials. Fast US delivery. #ad">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .us-hero { background: linear-gradient(135deg, #1a3a1a, #2C1A5E); }
+    .filter-bar {
+      display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem;
+    }
+    .filter-btn {
+      padding: 8px 18px; border-radius: 20px; border: 1px solid var(--border);
+      background: white; font-size: 0.82rem; font-weight: 500; cursor: pointer;
+      transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--purple); color: white; border-color: var(--purple);
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="page-hero us-hero">
+    <div class="page-hero-content">
+      <span class="eyebrow">🇺🇸 Amazon US · 90 Million Pinterest Users · Earn in $$$</span>
+      <h1>US Store <em>💵</em></h1>
+      <p>The same curated picks — all linked to Amazon US for your American audience. Sign up for Amazon Associates US at associate-program.amazon.com.</p>
+    </div>
+  </section>
+
+  <section class="section-padded">
+    <div class="container">
+
+      <div class="featured-banner">
+        <div>
+          <h3>🇺🇸 Amazon Associates US — Same Products, Bigger Audience</h3>
+          <p>Pinterest has 90 million users in the US vs 15 million in the UK. Your US account runs the same content — just swap all links to your Amazon US affiliate links and change prices to $.</p>
+        </div>
+        <a href="https://affiliate-program.amazon.com" target="_blank" class="btn-featured">Join US Programme →</a>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card"><div class="num">28</div><div class="label">US Products</div></div>
+        <div class="stat-card"><div class="num">90M</div><div class="label">US Pinterest Users</div></div>
+        <div class="stat-card"><div class="num">10%</div><div class="label">Beauty Commission</div></div>
+        <div class="stat-card"><div class="num">💵</div><div class="label">Paid in Dollars</div></div>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProducts('all', this)">All Products</button>
+        <button class="filter-btn" onclick="filterProducts('home', this)">🏡 Home Org</button>
+        <button class="filter-btn" onclick="filterProducts('beauty', this)">✨ Beauty</button>
+        <button class="filter-btn" onclick="filterProducts('baby', this)">👶 Baby</button>
+      </div>
+
+      <div class="product-grid" id="usGrid">
+
+        <!-- HOME ORG -->
+        <div class="product-card" data-niche="home">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=500&q=80" alt="Fridge Bins"><span class="card-badge hot">🔥 #1 US Seller</span></div>
+          <div class="card-body"><div class="card-niche">Home · Kitchen</div><h3 class="card-title">Stackable Clear Fridge Bins</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $14</span><span class="card-commission">earn $0.42–$0.72</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=stackable+fridge+bins+clear+organizer" target="_blank" class="btn-shop">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="home">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Drawer Dividers"></div>
+          <div class="card-body"><div class="card-niche">Home · Bedroom</div><h3 class="card-title">Bamboo Drawer Dividers</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $12</span><span class="card-commission">earn $0.36–$0.66</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=bamboo+drawer+dividers+adjustable" target="_blank" class="btn-shop">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="home">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80" alt="Storage Boxes"><span class="card-badge hot">📌 Most Pinned</span></div>
+          <div class="card-body"><div class="card-niche">Home · Storage</div><h3 class="card-title">Clear Storage Boxes</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $16</span><span class="card-commission">earn $0.48–$1.20</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=stackable+clear+storage+boxes+organizer" target="_blank" class="btn-shop">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="home">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&q=80" alt="Lazy Susan"></div>
+          <div class="card-body"><div class="card-niche">Home · Kitchen</div><h3 class="card-title">Lazy Susan Turntable</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $14</span><span class="card-commission">earn $0.42–$0.90</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=lazy+susan+turntable+organizer+kitchen" target="_blank" class="btn-shop">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="home">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=500&q=80" alt="Canisters"><span class="card-badge hot">🔥 Viral</span></div>
+          <div class="card-body"><div class="card-niche">Home · Pantry</div><h3 class="card-title">Airtight Kitchen Canisters</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $22</span><span class="card-commission">earn $0.66–$1.50</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=airtight+kitchen+canister+set" target="_blank" class="btn-shop">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="home">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=500&q=80" alt="Velvet Hangers"></div>
+          <div class="card-body"><div class="card-niche">Home · Closet</div><h3 class="card-title">Velvet Hangers (50pk)</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $12</span><span class="card-commission">earn $0.36–$0.60</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=velvet+hangers+50+pack+non+slip" target="_blank" class="btn-shop">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="home">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=500&q=80" alt="Under Sink"><span class="card-badge hot">📌 Viral</span></div>
+          <div class="card-body"><div class="card-niche">Home · Bathroom</div><h3 class="card-title">Under-Sink Pull-Out Organizer</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $25</span><span class="card-commission">earn $0.75–$1.35</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=under+sink+organizer+pull+out" target="_blank" class="btn-shop">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="home">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1593078166039-c9878df5c520?w=500&q=80" alt="Desk Organiser"></div>
+          <div class="card-body"><div class="card-niche">Home · Office</div><h3 class="card-title">Desk Organizer Set</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $22</span><span class="card-commission">earn $0.66–$1.20</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=aesthetic+desk+organizer+set" target="_blank" class="btn-shop">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <!-- BEAUTY -->
+        <div class="product-card" data-niche="beauty">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500&q=80" alt="LED Mask"><span class="card-badge beauty">💄 10% Comm</span></div>
+          <div class="card-body"><div class="card-niche">Beauty</div><h3 class="card-title">LED Light Therapy Mask</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $45</span><span class="card-commission">earn $4.50–$15</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=LED+face+mask+light+therapy&i=beauty" target="_blank" class="btn-shop gold">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="beauty">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&q=80" alt="Gua Sha"><span class="card-badge beauty">✨ 10%</span></div>
+          <div class="card-body"><div class="card-niche">Beauty</div><h3 class="card-title">Facial Gua Sha Set</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $18</span><span class="card-commission">earn $1.80–$5.40</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=gua+sha+facial+tool+rose+quartz&i=beauty" target="_blank" class="btn-shop gold">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="beauty">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=500&q=80" alt="Vitamin C"><span class="card-badge beauty">☀️ 10%</span></div>
+          <div class="card-body"><div class="card-niche">Beauty</div><h3 class="card-title">Luxury Vitamin C Serum</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $30</span><span class="card-commission">earn $3–$10</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=luxury+vitamin+c+serum+face&i=beauty" target="_blank" class="btn-shop gold">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="beauty">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=500&q=80" alt="Silk Pillowcase"><span class="card-badge beauty">😴 10%</span></div>
+          <div class="card-body"><div class="card-niche">Beauty · Sleep</div><h3 class="card-title">Silk Pillowcase Set</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $22</span><span class="card-commission">earn $2.20–$5.50</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=silk+pillowcase+mulberry+silk&i=beauty" target="_blank" class="btn-shop gold">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="beauty">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1601612628452-9e99ced43524?w=500&q=80" alt="Steamer"><span class="card-badge beauty">🧖 10%</span></div>
+          <div class="card-body"><div class="card-niche">Beauty · Spa</div><h3 class="card-title">Facial Steamer Device</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $28</span><span class="card-commission">earn $2.80–$8</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=facial+steamer+device+nano&i=beauty" target="_blank" class="btn-shop gold">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <!-- BABY -->
+        <div class="product-card" data-niche="baby">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500&q=80" alt="Swaddles"><span class="card-badge baby">💛 Most Gifted</span></div>
+          <div class="card-body"><div class="card-niche">Baby · Newborn</div><h3 class="card-title">Muslin Swaddle Blankets</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $18</span><span class="card-commission">earn $0.54–$1.08</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=muslin+baby+swaddle+blanket" target="_blank" class="btn-shop">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="baby">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="White Noise"><span class="card-badge baby">😴 Baby Sleep</span></div>
+          <div class="card-body"><div class="card-niche">Baby · Sleep</div><h3 class="card-title">Baby White Noise Machine</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $22</span><span class="card-commission">earn $0.66–$1.65</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=baby+white+noise+machine+portable" target="_blank" class="btn-shop">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="baby">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1519689373023-dd07c7988603?w=500&q=80" alt="Nursery Bins"><span class="card-badge baby">📌 Pins High</span></div>
+          <div class="card-body"><div class="card-niche">Baby · Nursery</div><h3 class="card-title">Nursery Storage Bins</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $25</span><span class="card-commission">earn $0.75–$1.65</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=nursery+storage+bins+fabric" target="_blank" class="btn-shop">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+        <div class="product-card" data-niche="baby">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&q=80" alt="Feeding Set"><span class="card-badge baby">🍼 Weaning</span></div>
+          <div class="card-body"><div class="card-niche">Baby · Feeding</div><h3 class="card-title">Silicone Feeding Set</h3><div class="card-meta"><span class="card-price"><span class="from">from</span> $15</span><span class="card-commission">earn $0.45–$0.90</span></div></div>
+          <div class="card-footer"><a href="https://www.amazon.com/s?k=silicone+baby+feeding+weaning+set" target="_blank" class="btn-shop">🇺🇸 US Shop #ad</a></div>
+        </div>
+
+      </div>
+
+      <div class="disclosure mt-2">
+        <strong>#ad | Affiliate Disclosure:</strong> PickedAndPinned is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program. As an Amazon Associate we earn from qualifying purchases.
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="nav.js"></script>
+  <script>
+    function filterProducts(niche, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('#usGrid .product-card').forEach(card => {
+        if (niche === 'all' || card.dataset.niche === niche) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
