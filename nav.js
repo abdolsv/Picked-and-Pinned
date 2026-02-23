@@ -1,4 +1,4 @@
-// nav.js — shared navigation and footer for all pages
+i// nav.js — shared navigation and footer for all pages
 (function() {
 
   // ── NAV ────────────────────────────────────────────────
@@ -59,7 +59,7 @@
       </div>
       <div class="footer-col">
         <h5>Top Picks</h5>
-        <a href="led-face-mask.html">💡 LED Face Mask</a>
+        <a href="ledfacemask.html">💡 LED Face Mask</a>
         <a href="gua-sha.html">🌸 Gua Sha Set</a>
         <a href="silk-pillowcase.html">😴 Silk Pillowcase</a>
         <a href="fridge-bins.html">🧊 Fridge Bins</a>
