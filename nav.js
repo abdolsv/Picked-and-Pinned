@@ -1,4 +1,4 @@
-i// nav.js — shared navigation and footer for all pages
+// nav.js — shared navigation and footer for all pages
 (function() {
 
   // ── NAV ────────────────────────────────────────────────
