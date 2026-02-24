@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackable Fridge Bins | PickedAndPinned</title>
+  <meta name="description" content="The fridge bins that 10-minute transformation is all over Pinterest. 28,000 five-star reviews. See the before & after that's been saved 80,000 times.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --accent: #1a7a6e; --accent2: #25a99a; --accent-soft: rgba(26,122,110,0.1); }
+
+    .fridge-hero {
+      background: linear-gradient(145deg, #0a1f1c 0%, #0f3330 40%, #061814 100%);
+      padding: clamp(3rem,8vw,7rem) clamp(1rem,4vw,3rem);
+      position: relative; overflow: hidden;
+    }
+    .fridge-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 60% 50%, rgba(37,169,154,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    @media(max-width:768px){ .hero-grid { grid-template-columns:1fr; gap:2rem; } }
+
+    .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .badge { display: inline-block; padding: 5px 14px; border-radius: 4px; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    .b1 { background: #25a99a; color: white; }
+    .b2 { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.15); }
+
+    .htitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem,5vw,4rem); font-weight: 700; line-height: 1.05; color: white; margin-bottom: 1rem; }
+    .htitle em { color: #7de8de; }
+
+    .stars-row { display: flex; align-items: center; gap: 10px; margin-bottom: 1.25rem; }
+    .stars { color: #FFC107; font-size: 1.1rem; }
+    .rcount { color: rgba(255,255,255,0.55); font-size: 0.85rem; }
+    .rcount strong { color: white; }
+
+    .tagline { font-size: 1.05rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1.5rem; }
+    .tagline strong { color: white; }
+
+    /* BEFORE AFTER VISUAL */
+    .ba-visual {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3px;
+      border-radius: 14px; overflow: hidden; margin-bottom: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .ba-side { padding: 1.25rem; position: relative; }
+    .ba-side.before { background: rgba(239,68,68,0.08); }
+    .ba-side.after { background: rgba(37,169,154,0.1); }
+    .ba-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+    .ba-label.before-l { color: #f87171; }
+    .ba-label.after-l { color: #5eead4; }
+    .ba-items { list-style: none; }
+    .ba-items li { font-size: 0.8rem; color: rgba(255,255,255,0.65); padding: 3px 0; padding-left: 14px; position: relative; }
+    .ba-items li::before { content: '–'; position: absolute; left: 0; color: #f87171; }
+    .ba-items.after-items li::before { content: '✓'; color: #5eead4; }
+
+    .social-proof-bar {
+      background: rgba(37,169,154,0.12); border: 1px solid rgba(37,169,154,0.2);
+      border-radius: 10px; padding: 10px 14px; margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.82rem; color: #7de8de;
+    }
+
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .btn-teal {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #25a99a, #1a7a6e);
+      color: white; font-weight: 600; font-size: 1rem;
+      padding: 15px 30px; border-radius: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 28px rgba(37,169,154,0.35);
+    }
+    .btn-teal:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(37,169,154,0.5); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16);
+      color: white; font-weight: 500; font-size: 1rem;
+      padding: 15px 26px; border-radius: 12px; transition: background 0.2s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.12); }
+
+    .trust-row { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+    .trust-row span { display: flex; align-items: center; gap: 5px; }
+
+    /* Image side */
+    .img-wrap { position: relative; }
+    .img-glow { position: absolute; inset: -30px; background: radial-gradient(circle, rgba(37,169,154,0.2) 0%, transparent 65%); pointer-events: none; }
+    .img-main { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+    .fl1 { position: absolute; bottom: 16px; left: -16px; background: white; border-radius: 14px; padding: 12px 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.35); max-width: 210px; animation: flt 4s ease-in-out infinite; }
+    @keyframes flt { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .fl1 .fn { font-size: 0.78rem; font-weight: 600; color: #1a1025; }
+    .fl1 .ft { font-size: 0.73rem; color: #666; line-height: 1.4; margin-top: 3px; }
+    .fl1 .fs { color: #FFC107; font-size: 0.78rem; margin-bottom: 3px; }
+    .fl2 { position: absolute; top: 16px; right: -10px; background: linear-gradient(135deg,#25a99a,#1a7a6e); color: white; border-radius: 12px; padding: 10px 16px; text-align: center; animation: flt 4s ease-in-out 1.5s infinite; }
+    .fl2 .fn2 { font-size: 1.4rem; font-weight: 700; font-family: 'Cormorant Garamond', serif; }
+    .fl2 .ft2 { font-size: 0.68rem; opacity: 0.85; }
+
+    /* Transformation section */
+    .transform-section { background: white; padding: clamp(3rem,6vw,5rem) clamp(1rem,4vw,3rem); }
+    .transform-grid { max-width: 1140px; margin: 2.5rem auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.5rem; }
+    .tc { background: var(--offwhite); border-radius: 16px; padding: 1.5rem; border: 1px solid var(--border); }
+    .tc-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .tc-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.35rem; }
+    .tc-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* Stat row */
+    .stats-section { background: var(--offwhite); padding: clamp(2rem,5vw,4rem) clamp(1rem,4vw,3rem); }
+    .stats-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 1.5rem; }
+    .sc { text-align: center; background: white; border-radius: 14px; padding: 1.5rem; border: 1px solid var(--border); }
+    .sc-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 700; color: var(--accent); line-height: 1; }
+    .sc-label { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+
+    /* Reviews */
+    .rev-section { background: var(--cream); padding: clamp(3rem,6vw,5rem) clamp(1rem,4vw,3rem); }
+    .rev-grid { max-width: 1140px; margin: 2.5rem auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.5rem; }
+    .rev-card { background: white; border-radius: 16px; padding: 1.5rem; border: 1px solid var(--border); }
+    .rev-hdr { display: flex; gap: 12px; align-items: center; margin-bottom: 1rem; }
+    .rev-av { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg,#25a99a,#1a7a6e); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0; }
+    .rev-name { font-weight: 600; font-size: 0.9rem; }
+    .rev-meta { font-size: 0.75rem; color: var(--muted); }
+    .rev-stars { color: #FFC107; font-size: 0.9rem; margin-bottom: 6px; }
+    .rev-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; }
+    .rev-txt { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+    .verified { display: inline-flex; align-items: center; gap: 4px; font-size: 0.72rem; color: #16a34a; font-weight: 500; margin-top: 8px; }
+
+    /* Final CTA */
+    .final-cta { background: linear-gradient(135deg, #0f3330, #061814); padding: clamp(3rem,6vw,5rem) clamp(1rem,4vw,3rem); text-align: center; }
+    .final-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3.2rem); color: white; margin-bottom: 1rem; }
+    .final-cta p { color: rgba(255,255,255,0.65); max-width: 560px; margin: 0 auto 2rem; }
+
+    .shdr { max-width: 1140px; margin: 0 auto; text-align: center; }
+    .shdr .etag { display: inline-block; font-size: 0.77rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border: 1px solid rgba(26,122,110,0.2); padding: 5px 14px; border-radius: 20px; margin-bottom: 1rem; }
+    .shdr h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: var(--text); }
+    .shdr h2 em { color: var(--accent); }
+    .shdr p { color: var(--muted); max-width: 560px; margin: 0.75rem auto 0; }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="fridge-hero">
+    <div class="hero-grid">
+      <div>
+        <div class="badge-row">
+          <span class="badge b1">📌 80K Pinterest Saves</span>
+          <span class="badge b2">#1 Home Organisation Seller</span>
+        </div>
+
+        <h1 class="htitle">
+          The Fridge Bins That<br><em>Transform</em> Your Kitchen<br>in 10 Minutes
+        </h1>
+
+        <div class="stars-row">
+          <span class="stars">★★★★★</span>
+          <span class="rcount"><strong>28,847</strong> verified reviews</span>
+        </div>
+
+        <p class="tagline">
+          Open your fridge right now. If you have to shuffle things to find what you're looking for — this is for you.
+          <strong>28,000 people have already done the transformation. Here's why they all say they should have done it sooner.</strong>
+        </p>
+
+        <div class="ba-visual">
+          <div class="ba-side before">
+            <div class="ba-label before-l">😤 Your fridge right now</div>
+            <ul class="ba-items">
+              <li>Can't find anything fast</li>
+              <li>Things fall when you open it</li>
+              <li>Food goes off unseen</li>
+              <li>Looks messy, feels chaotic</li>
+            </ul>
+          </div>
+          <div class="ba-side after">
+            <div class="ba-label after-l">✨ 10 minutes later</div>
+            <ul class="ba-items after-items">
+              <li>Everything visible & accessible</li>
+              <li>Zones for every food type</li>
+              <li>Less food waste, more savings</li>
+              <li>Pinterest-worthy every time you open it</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="social-proof-bar">
+          📌 This exact pin has been saved <strong style="margin:0 4px;">80,000+ times</strong> on Pinterest this year
+        </div>
+
+        <div class="cta-row">
+          <a href="https://www.amazon.co.uk/s?k=stackable+fridge+bins+clear+organiser" target="_blank" class="btn-teal">🇬🇧 Shop UK — Amazon</a>
+          <a href="https://www.amazon.com/s?k=stackable+fridge+bins+clear" target="_blank" class="btn-ghost">🇺🇸 Shop US</a>
+        </div>
+
+        <div class="trust-row">
+          <span>✓ Free Returns</span>
+          <span>✓ Next-Day Delivery Available</span>
+          <span>✓ Lifetime of savings on food waste</span>
+        </div>
+      </div>
+
+      <div class="img-wrap">
+        <div class="img-glow"></div>
+        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&q=85" alt="Stackable Fridge Bins" class="img-main">
+        <div class="fl1">
+          <div class="fs">★★★★★</div>
+          <div class="fn">Claire M. · Verified Buyer</div>
+          <div class="ft">"Took 8 minutes. My fridge looks like something out of a magazine. My whole family has commented."</div>
+        </div>
+        <div class="fl2">
+          <div class="fn2">28k</div>
+          <div class="ft2">5-star reviews</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stats-inner">
+      <div class="sc"><div class="sc-num">28k+</div><div class="sc-label">Verified 5-star reviews on Amazon</div></div>
+      <div class="sc"><div class="sc-num">10</div><div class="sc-label">Minutes average transformation time</div></div>
+      <div class="sc"><div class="sc-num">80k</div><div class="sc-label">Pinterest saves on the before/after pin</div></div>
+      <div class="sc"><div class="sc-num">£0</div><div class="sc-label">Tools required — just click into place</div></div>
+    </div>
+  </section>
+
+  <!-- WHY IT WORKS -->
+  <section class="transform-section">
+    <div class="shdr">
+      <div class="etag">More than just tidy</div>
+      <h2>You'll actually <em>save money</em> once your fridge is organised</h2>
+      <p>The average UK household throws away £700 of food per year. The number one reason? Not being able to see what they have.</p>
+    </div>
+    <div class="transform-grid">
+      <div class="tc">
+        <div class="tc-icon">👁️</div>
+        <div class="tc-title">See everything instantly</div>
+        <div class="tc-desc">Clear bins mean no mystery zones. You'll use up everything you buy — and stop buying duplicates of things already at the back.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon">📦</div>
+        <div class="tc-title">Stackable = double the space</div>
+        <div class="tc-desc">These bins stack vertically, meaning you're using the full height of your shelf — not just the bottom layer. Most people find they have 40% more usable fridge space.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon">🧽</div>
+        <div class="tc-title">Cleaning takes 30 seconds</div>
+        <div class="tc-desc">Lift out a bin, wipe down, replace. No more scrubbing the whole shelf for an hour. These are dishwasher safe too.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon">✨</div>
+        <div class="tc-title">The aesthetic payoff is real</div>
+        <div class="tc-desc">You'll find yourself opening your fridge just to look at it. Your guests will comment. Your family will finally put things back in the right place.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="rev-section">
+    <div class="shdr">
+      <div class="etag">Real homes · Real transformations</div>
+      <h2>People who said <em>"why didn't I do this sooner"</em></h2>
+    </div>
+    <div class="rev-grid" style="margin-top:2.5rem;">
+      <div class="rev-card">
+        <div class="rev-hdr">
+          <div class="rev-av">KH</div>
+          <div><div class="rev-name">Kate H.</div><div class="rev-meta">Leeds · 1 week ago</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-title">"My fridge is now the most organised thing I own"</div>
+        <div class="rev-txt">I've been meaning to sort my fridge for about 3 years. Saw this on Pinterest, ordered it, did the whole thing in 15 minutes. My partner stood in front of the open fridge for a full minute without saying anything. Then he asked me to do his mum's fridge too.</div>
+        <div class="verified">✓ Verified Purchase</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-hdr">
+          <div class="rev-av" style="background:linear-gradient(135deg,#8B2252,#2C1A5E);">LM</div>
+          <div><div class="rev-name">Laura M.</div><div class="rev-meta">Cardiff · 3 weeks ago</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-title">"I've stopped wasting food for the first time"</div>
+        <div class="rev-txt">I realised I was spending £60-70 a week on food and throwing away a shocking amount. After organising with these bins I can now see everything clearly. I've cut my food shop by £15 a week because I stop buying things I already have.</div>
+        <div class="verified">✓ Verified Purchase</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-hdr">
+          <div class="rev-av" style="background:linear-gradient(135deg,#c47f17,#1a7a6e);">TJ</div>
+          <div><div class="rev-name">Tina J.</div><div class="rev-meta">Glasgow · 2 weeks ago</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-title">"Ordered 3 sets and organised my whole kitchen"</div>
+        <div class="rev-txt">Started with the fridge. Loved them so much I got a set for the pantry shelves and bathroom cabinet too. They're sturdy, they look stunning, and everything just makes sense now. My favourite home purchase this year without a doubt.</div>
+        <div class="verified">✓ Verified Purchase</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>Your fridge transformation<br><em>is 10 minutes away</em></h2>
+    <p>28,847 people have done it. The before and after that gets shared 80,000 times on Pinterest. Your turn.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://www.amazon.co.uk/s?k=stackable+fridge+bins+clear+organiser" target="_blank" class="btn-teal">🇬🇧 Shop UK — Amazon</a>
+      <a href="https://www.amazon.com/s?k=stackable+fridge+bins+clear" target="_blank" class="btn-ghost">🇺🇸 Shop US</a>
+    </div>
+    <p style="font-size:0.78rem;opacity:0.4;margin-top:1.5rem;">#ad · Amazon affiliate link · We earn a small commission at no extra cost to you</p>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="nav.js"></script>
+</body>
+</html>
