@@ -43,7 +43,7 @@
   }
 
   /* ══════════════════════════════════════
-     STICKY MOBILE CTA BAR (Biggest Revenue Win)
+     STICKY MOBILE CTA BAR
   ══════════════════════════════════════ */
   .sticky-cta {
     position: fixed;
@@ -181,9 +181,7 @@
   }
   .cta-block.dark .btn-micro { color: rgba(245,239,228,0.35); }
 
-  .price-badge {
-    display: inline-flex; align-items: baseline; gap: 6px;
-  }
+  .price-badge { display: inline-flex; align-items: baseline; gap: 6px; }
   .price-from { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; }
   .price-num {
     font-family: 'Cormorant Garamond', serif;
@@ -238,7 +236,6 @@
     background: rgba(232,213,191,0.3);
   }
 
-  /* HERO PRICE + CTA */
   .hero-cta-box {
     background: white;
     border: 1px solid rgba(92,61,46,0.08);
@@ -282,7 +279,6 @@
     display: flex; align-items: center; justify-content: center; padding: 60px 40px;
   }
 
-  /* CSS product bottle */
   .product-float {
     background: white; border-radius: 4px;
     padding: 44px 36px; text-align: center;
@@ -301,14 +297,14 @@
     padding: 5px 16px; border-radius: 20px; font-weight: 600;
   }
 
- .real-product-img {
-  width: 100%;
-  max-width: 140px;
-  height: auto;
-  margin: 0 auto 20px;
-  display: block;
-  filter: drop-shadow(0 12px 24px rgba(92,61,46,0.15));
-}
+  .real-product-img {
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+    margin: 0 auto 20px;
+    display: block;
+    filter: drop-shadow(0 12px 24px rgba(92,61,46,0.15));
+  }
 
   .product-meta { font-size: 0.72rem; color: var(--sage); margin-bottom: 6px; }
   .product-rating { color: #C9A040; font-size: 0.82rem; letter-spacing: 0px; }
@@ -353,7 +349,7 @@
   .ingredient-desc { font-size: 0.84rem; line-height: 1.72; color: var(--muted); font-weight: 300; }
 
   /* ══════════════════════════════════════
-     BENEFITS (tight version)
+     BENEFITS
   ══════════════════════════════════════ */
   .benefits { padding: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
 
@@ -381,7 +377,21 @@
      COMPARISON TABLE
   ══════════════════════════════════════ */
   .comparison { padding: 80px; background: var(--warm-white); }
-  .compare-table { width: 100%; border-collapse: collapse; margin-top: 44px; }
+  
+  .table-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 44px;
+    padding-bottom: 10px;
+  }
+
+  .compare-table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    margin-top: 0;
+  }
   .compare-table th {
     padding: 16px 20px; text-align: left;
     font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
@@ -404,22 +414,6 @@
   .check { color: var(--green-check); font-size: 1rem; }
   .cross { color: #C0826B; font-size: 0.9rem; }
   .neutral { color: var(--muted); font-size: 0.8rem; }
- /* Add this new wrapper class */
-.table-scroll-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  margin-top: 44px;
-  padding-bottom: 10px; /* Gives the scrollbar breathing room */
-}
-
-/* Update your existing .compare-table */
-.compare-table {
-  width: 100%;
-  min-width: 650px; /* This forces the table to stay wide, triggering the scroll on mobile */
-  border-collapse: collapse;
-  margin-top: 0; /* Moved the margin to the wrapper */
-}
 
   /* ══════════════════════════════════════
      NOT FOR YOU SECTION
@@ -446,7 +440,7 @@
   .nfy-card.green .nfy-list li::before { content: '✓'; color: var(--green-check); font-weight: 700; }
 
   /* ══════════════════════════════════════
-     REVIEWS (tightened to 4)
+     REVIEWS
   ══════════════════════════════════════ */
   .reviews { padding: 80px; }
   .reviews-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
@@ -643,16 +637,11 @@
     .btn-amazon { width: 100%; justify-content: center; }
     footer { flex-direction: column; padding: 20px; text-align: center; }
     .final-cta-box { padding: 24px 20px; }
-   .compare-table {
-       width: 100%;
-       overflow-x: auto;
-   }
   }
 </style>
 </head>
 <body>
 
-<!-- ═══ STICKY MOBILE CTA BAR ═══ -->
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta-left">
     <div class="sticky-cta-product">CeraVe Daily Moisturizing Lotion</div>
@@ -664,13 +653,11 @@
   <button class="sticky-cta-close" onclick="document.getElementById('stickyCta').style.display='none'" aria-label="Close">✕</button>
 </div>
 
-<!-- ═══ NAV ═══ -->
 <nav>
   <span class="nav-logo">Picked &amp; Pinned</span>
   <a href="https://www.amazon.com/CeraVe-Moisturizing-Lotion-Hyaluronic-Fragrance/dp/B000YJ2SLG?linkCode=ll2&tag=pickedandpinned-20&linkId=8cd88d018a9941acb1115cc2f5203059" target="_blank" rel="noopener" class="nav-cta">Shop Amazon →</a>
 </nav>
 
-<!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-left">
@@ -684,7 +671,6 @@
       <span class="badge">Eczema Accepted</span>
     </div>
 
-    <!-- PRICE-FORWARD CTA BOX -->
     <div class="hero-cta-box">
       <div class="hero-price-row">
         <span class="hero-price-label">Starting at</span>
@@ -702,18 +688,18 @@
     </div>
   </div>
 
-  <div class="product-float">
-  <img src="cerava.png" alt="CeraVe Daily Moisturizing Lotion 19oz" class="real-product-img">
-  
-  <div class="product-meta">19 fl oz · Multiple sizes available</div>
-  <div>
-    <span class="product-rating">★★★★★</span>
-    <span class="product-rating-count">67K+ Reviews</span>
+  <div class="hero-right">
+    <div class="product-float">
+      <img src="cerava.png" alt="CeraVe Daily Moisturizing Lotion 19oz" class="real-product-img">
+      <div class="product-meta">19 fl oz · Multiple sizes available</div>
+      <div>
+        <span class="product-rating">★★★★★</span>
+        <span class="product-rating-count">67K+ Reviews</span>
+      </div>
+    </div>
   </div>
-</div>
 </section>
 
-<!-- ═══ TICKER STRIP ═══ -->
 <div class="proof-strip">
   <div class="proof-track">
     <span class="proof-item">67,000+ Five-Star Reviews</span>
@@ -733,7 +719,6 @@
   </div>
 </div>
 
-<!-- ═══ INGREDIENTS ═══ -->
 <section class="ingredients">
   <p class="section-label">Science-Backed Formula</p>
   <h2 class="section-title">Three ingredients that<br><em>actually work</em> together.</h2>
@@ -757,7 +742,6 @@
   </div>
 </section>
 
-<!-- ═══ CTA BLOCK #1 — After Ingredients ═══ -->
 <div class="cta-block dark fade-up">
   <div class="cta-block-text">
     <h3>See the full ingredient list &amp; current pricing</h3>
@@ -770,7 +754,6 @@
   </div>
 </div>
 
-<!-- ═══ BENEFITS ═══ -->
 <section class="benefits">
   <div class="fade-up">
     <div class="big-stat">24<span>hr</span></div>
@@ -831,7 +814,6 @@
   </div>
 </section>
 
-<!-- ═══ CTA BLOCK #2 — After Benefits ═══ -->
 <div class="cta-block light fade-up">
   <div class="cta-block-text">
     <h3>Ready to try it?</h3>
@@ -844,7 +826,6 @@
   </div>
 </div>
 
-<!-- ═══ COMPARISON TABLE ═══ -->
 <section class="comparison">
   <p class="section-label">How It Compares</p>
   <h2 class="section-title">Why choose CeraVe over<br><em>other drugstore lotions?</em></h2>
@@ -907,7 +888,6 @@
  </div>
 </section>
 
-<!-- ═══ NOT FOR YOU SECTION ═══ -->
 <section class="not-for-you">
   <p class="section-label">Radical Honesty</p>
   <h2 class="section-title"><em>Honest advice:</em> who should &amp; shouldn't buy this.</h2>
@@ -935,7 +915,6 @@
   </div>
 </section>
 
-<!-- ═══ WHO IT'S FOR ═══ -->
 <section class="who-its-for fade-up">
   <p class="section-label">Made For Every Skin Type</p>
   <h2 class="section-title">One lotion, <em>any skin.</em></h2>
@@ -963,7 +942,6 @@
   </div>
 </section>
 
-<!-- ═══ REVIEWS ═══ -->
 <section class="reviews">
   <div class="reviews-header fade-up">
     <div>
@@ -977,7 +955,6 @@
     </div>
   </div>
 
-  <!-- METRICS -->
   <div class="metrics-grid" style="margin-bottom:32px;">
     <div class="metric-item fade-up">
       <div class="metric-label-top">Moisturizer Quality</div>
@@ -1033,7 +1010,6 @@
   </div>
 </section>
 
-<!-- ═══ CTA BLOCK #3 — After Reviews ═══ -->
 <div class="cta-block mid fade-up">
   <div class="cta-block-text">
     <h3>67,000+ people already love it.</h3>
@@ -1045,7 +1021,6 @@
   </div>
 </div>
 
-<!-- ═══ FAQ ═══ -->
 <section class="faq">
   <p class="section-label">Objections Answered</p>
   <h2 class="section-title">Common questions before<br><em>you buy.</em></h2>
@@ -1131,7 +1106,6 @@
   </div>
 </section>
 
-<!-- ═══ FINAL CTA ═══ -->
 <section class="final-cta">
   <div class="cta-glow"></div>
   <p class="section-label" style="justify-content:center;">Affiliate Recommendation · #ad</p>
@@ -1160,7 +1134,6 @@
   <p class="cta-disclaimer">#ad · As an Amazon Associate, Picked &amp; Pinned earns from qualifying purchases at no extra cost to you.</p>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
 <footer>
   <span class="footer-brand">Picked &amp; Pinned</span>
   <p class="footer-note">This page contains affiliate links. As an Amazon Associate we earn from qualifying purchases at no extra cost to you. Product reviews are sourced from verified Amazon purchasers. Results may vary. This is not medical advice.</p>
