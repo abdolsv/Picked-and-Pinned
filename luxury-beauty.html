@@ -301,37 +301,14 @@
     padding: 5px 16px; border-radius: 20px; font-weight: 600;
   }
 
-  .bottle { width: 110px; height: 165px; margin: 0 auto 20px; position: relative; }
-  .bottle-body {
-    width: 92px; height: 142px;
-    background: linear-gradient(135deg, #fff 0%, #E8F0F5 30%, #C5DDE8 65%, #9BBFCC 100%);
-    border-radius: 10px 10px 16px 16px;
-    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-    box-shadow: inset -7px 0 18px rgba(0,0,0,0.07), 2px 2px 10px rgba(92,61,46,0.1);
-    overflow: hidden;
-  }
-  .bottle-label {
-    position: absolute; top: 24px; left: 8px; right: 8px;
-    background: white; border-radius: 3px; padding: 8px 6px; text-align: center;
-  }
-  .bottle-label .brand {
-    font-family: 'Cormorant Garamond', serif; font-size: 0.92rem;
-    font-weight: 600; color: var(--bark); letter-spacing: 0.04em; display: block;
-  }
-  .bottle-label .pname { font-size: 0.44rem; color: var(--muted); display: block; margin-top: 2px; line-height: 1.4; }
-  .bottle-bar { width: 55%; height: 1.5px; background: var(--sage); margin: 4px auto; border-radius: 1px; }
-  .bottle-neck {
-    width: 46px; height: 18px;
-    background: linear-gradient(135deg, #E8F0F5, #C5DDE8);
-    border-radius: 3px 3px 0 0;
-    position: absolute; top: -7px; left: 50%; transform: translateX(-50%);
-  }
-  .bottle-cap {
-    width: 40px; height: 14px;
-    background: linear-gradient(135deg, #3D6B7A, #2A4F5C);
-    border-radius: 3px 3px 2px 2px;
-    position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
-  }
+ .real-product-img {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  margin: 0 auto 20px;
+  display: block;
+  filter: drop-shadow(0 12px 24px rgba(92,61,46,0.15));
+}
 
   .product-meta { font-size: 0.72rem; color: var(--sage); margin-bottom: 6px; }
   .product-rating { color: #C9A040; font-size: 0.82rem; letter-spacing: 0px; }
@@ -427,6 +404,22 @@
   .check { color: var(--green-check); font-size: 1rem; }
   .cross { color: #C0826B; font-size: 0.9rem; }
   .neutral { color: var(--muted); font-size: 0.8rem; }
+ /* Add this new wrapper class */
+.table-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  margin-top: 44px;
+  padding-bottom: 10px; /* Gives the scrollbar breathing room */
+}
+
+/* Update your existing .compare-table */
+.compare-table {
+  width: 100%;
+  min-width: 650px; /* This forces the table to stay wide, triggering the scroll on mobile */
+  border-collapse: collapse;
+  margin-top: 0; /* Moved the margin to the wrapper */
+}
 
   /* ══════════════════════════════════════
      NOT FOR YOU SECTION
@@ -709,26 +702,15 @@
     </div>
   </div>
 
-  <div class="hero-right">
-    <div class="product-float">
-      <div class="bottle">
-        <div class="bottle-cap"></div>
-        <div class="bottle-neck"></div>
-        <div class="bottle-body">
-          <div class="bottle-label">
-            <span class="brand">CeraVe</span>
-            <div class="bottle-bar"></div>
-            <span class="pname">Daily Moisturizing<br>Lotion</span>
-          </div>
-        </div>
-      </div>
-      <div class="product-meta">19 fl oz · Multiple sizes available</div>
-      <div>
-        <span class="product-rating">★★★★★</span>
-        <span class="product-rating-count">67K+ Reviews</span>
-      </div>
-    </div>
+  <div class="product-float">
+  <img src="cerava.png" alt="CeraVe Daily Moisturizing Lotion 19oz" class="real-product-img">
+  
+  <div class="product-meta">19 fl oz · Multiple sizes available</div>
+  <div>
+    <span class="product-rating">★★★★★</span>
+    <span class="product-rating-count">67K+ Reviews</span>
   </div>
+</div>
 </section>
 
 <!-- ═══ TICKER STRIP ═══ -->
@@ -867,6 +849,7 @@
   <p class="section-label">How It Compares</p>
   <h2 class="section-title">Why choose CeraVe over<br><em>other drugstore lotions?</em></h2>
 
+ <div class="table-scroll-wrapper">
   <table class="compare-table" role="table">
     <thead>
       <tr>
@@ -921,6 +904,7 @@
       </tr>
     </tbody>
   </table>
+ </div>
 </section>
 
 <!-- ═══ NOT FOR YOU SECTION ═══ -->
